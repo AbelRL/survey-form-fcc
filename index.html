@@ -12,6 +12,220 @@
 		<link rel="stylesheet" href="/css/style.css" />
 	</head>
 	<body>
+		<div class="container">
+			<header>
+				<h1 id="title">RIOT Games Survey form</h1>
+				<p id="description">
+					We're working to bring awesome games, let us to know about your games
+					habits.
+				</p>
+			</header>
+			<form id="survey-form">
+				<!-- data user: name, mail, age, current role-->
+				<section class="user-data">
+					<div class="user-name">
+						<label for="name" id="name-label">Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Your full name..."
+							required
+						/>
+					</div>
+					<div class="user-mail">
+						<label for="email" id="email-label">@</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="mail@host.com"
+							required
+						/>
+					</div>
+					<div class="user-age">
+						<label for="age" id="number-label">How old?</label>
+						<input
+							type="number"
+							id="number"
+							name="age"
+							min="18"
+							max="50"
+							placeholder="18"
+						/>
+					</div>
+					<fieldset class="gender">
+						<legend>Gender</legend>
+						<div>
+							<input type="radio" id="gender1" name="gender" value="male" />
+							<label for="gender1">Male</label>
+
+							<input type="radio" id="gender2" name="gender" value="female" />
+							<label for="gender2">Female</label>
+						</div>
+					</fieldset>
+					<div class="user-role">
+						<label for="dropdown" id="roles-label">Role</label>
+						<select name="roles" id="dropdown">
+							<option selected disabled>Kind of players</option>
+							<option value="relaxed">Relaxed Noob</option>
+							<option value="casual">Casual Gamer</option>
+							<option value="hardcore">Hardcore gamer</option>
+							<option value="professional">Professional gamer</option>
+						</select>
+					</div>
+				</section>
+				<section class="game-data">
+					<fieldset>
+						<legend>What days of the week do you play?</legend>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="sunday"
+								id="sunday"
+							/>
+							<label for="sunday">Sunday</label>
+						</div>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="monday"
+								id="monday"
+							/>
+							<label for="monday">Monday</label>
+						</div>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="tuesday"
+								id="tuesday"
+							/>
+							<label for="tuesday">Tuesday</label>
+						</div>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="wednesday"
+								id="wednesday"
+							/>
+							<label for="wednesday">Wednesday</label>
+						</div>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="thursday"
+								id="thursday"
+							/>
+							<label for="thursday">Thursday</label>
+						</div>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="friday"
+								id="friday"
+							/>
+							<label for="friday">Friday</label>
+						</div>
+						<div class="days">
+							<input
+								type="checkbox"
+								name="choosedays"
+								value="saturday"
+								id="saturday"
+							/>
+							<label for="saturday">Saturday</label>
+						</div>
+					</fieldset>
+					<div class="game-hours">
+						<label for="hour">How many hours a day do you play?</label>
+						<input type="range" name="hour" min="1" max="12" value="1" />
+					</div>
+					<div class="games-distract">
+						<label for="distract">While you play, what else do you do?</label>
+						<select name="distract" id="">
+							<option value="chat">Chat IRC</option>
+							<option value="tv">Whatch TV / Youtube</option>
+							<option value="music">Listen Music</option>
+							<option value="noone">Player focused</option>
+						</select>
+					</div>
+					<fieldset>
+						<legend>What are your favorite games titles?</legend>
+						<div>
+							<input type="checkbox" name="favGames" value="lol" id="lol" />
+							<label for="lol">Legue of Legends</label>
+							<input
+								type="checkbox"
+								name="favGames"
+								value="valorant"
+								id="valorant"
+							/>
+							<label for="valorant">Valorant</label>
+							<input type="checkbox" name="favGames" value="lor" id="lor" />
+							<label for="lor">Legue of Runeterra</label>
+							<input type="checkbox" name="favGames" value="teta" id="teta" />
+							<label for="teta">Teamfight Tactics</label>
+						</div>
+					</fieldset>
+				</section>
+				<section class="recommended-games">
+					<div>
+						<label for="satisfaction"
+							>How satisfied are you with RIOT Games?</label
+						>
+						<input
+							type="range"
+							name="satisfaction"
+							min="1"
+							max="10"
+							value="1"
+						/>
+						<p>10 = I am happy, 1 = completely unsatisfied</p>
+					</div>
+					<fieldset class="recomendUs">
+						<legend>Would you recommend us to your friends?</legend>
+						<div>
+							<input
+								type="radio"
+								id="RecommendYes"
+								name="recomendation"
+								value="yes"
+								checked
+							/>
+							<label for="RecommendYes">Yes</label>
+
+							<input
+								type="radio"
+								id="RecommendNo"
+								name="recomendation"
+								value="no"
+							/>
+							<label for="RecommendNo">No</label>
+							<input
+								type="radio"
+								id="RecommendMaybe"
+								name="recomendation"
+								value="no"
+							/>
+							<label for="RecommendMaybe">Maybe</label>
+						</div>
+					</fieldset>
+					<div class="user-comments">
+						<label for="comments">Any comments or suggestion?</label>
+						<textarea name="comments" id="text-area" cols="100" rows="10">
+feel free to comments...</textarea
+						>
+					</div>
+					<button type="submit" id="submit">Submit</button>
+				</section>
+			</form>
+		</div>
 		<script src="/js/script.js"></script>
 	</body>
 </html>
