@@ -9,9 +9,14 @@
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.10.0/css/all.css"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="/css/style.css" />
 	</head>
 	<body>
+		<div class="overlay"></div>
 		<div class="container">
 			<header>
 				<h1 id="title">RIOT Games Survey form</h1>
@@ -23,8 +28,9 @@
 			<form id="survey-form">
 				<!-- data user: name, mail, age, current role-->
 				<section class="user-data">
-					<div class="user-name">
-						<label for="name" id="name-label">Name</label>
+					<label for="name" id="name-label">Name</label>
+					<div class="user-data uname iconi">
+						<i class="fas fa-user"></i>
 						<input
 							type="text"
 							id="name"
@@ -33,38 +39,29 @@
 							required
 						/>
 					</div>
-					<div class="user-mail">
-						<label for="email" id="email-label">@</label>
+					<label for="email" id="email-label">Email</label>
+					<div class="user-data umail iconi">
+						<i class="fas fa-envelope"></i>
 						<input
 							type="email"
 							id="email"
 							name="email"
-							placeholder="mail@host.com"
+							placeholder="yourmail@host.com"
 							required
 						/>
 					</div>
-					<div class="user-age">
+					<div class="user-data uage">
 						<label for="age" id="number-label">How old?</label>
 						<input
 							type="number"
+							inputmode="numeric"
 							id="number"
 							name="age"
 							min="18"
 							max="50"
 							placeholder="18"
 						/>
-					</div>
-					<fieldset class="gender">
-						<legend>Gender</legend>
-						<div>
-							<input type="radio" id="gender1" name="gender" value="male" />
-							<label for="gender1">Male</label>
 
-							<input type="radio" id="gender2" name="gender" value="female" />
-							<label for="gender2">Female</label>
-						</div>
-					</fieldset>
-					<div class="user-role">
 						<label for="dropdown" id="roles-label">Role</label>
 						<select name="roles" id="dropdown">
 							<option selected disabled>Kind of players</option>
@@ -74,9 +71,20 @@
 							<option value="professional">Professional gamer</option>
 						</select>
 					</div>
+					<fieldset class="user-data ugender">
+						<label class="lblGender">Gender:</label>
+						<div>
+							<input type="radio" id="gender1" name="gender" value="male" />
+							<label for="gender1">Male</label>
+						</div>
+						<div>
+							<input type="radio" id="gender2" name="gender" value="female" />
+							<label for="gender2">Female</label>
+						</div>
+					</fieldset>
 				</section>
 				<section class="game-data">
-					<fieldset>
+					<fieldset class="game-data doweek">
 						<legend>What days of the week do you play?</legend>
 						<div class="days">
 							<input
@@ -142,9 +150,21 @@
 							<label for="saturday">Saturday</label>
 						</div>
 					</fieldset>
-					<div class="game-hours">
-						<label for="hour">How many hours a day do you play?</label>
-						<input type="range" name="hour" min="1" max="12" value="1" />
+					<div class="game-data">
+						<h4>How many hours a day do you play?</h4>
+						<div class="ghour">
+							<input
+								type="range"
+								name="hour"
+								min="1"
+								max="12"
+								value="1"
+								class="itemhours"
+							/>
+							<label for="hour" class="itemhours"
+								><span class="numHours"> </span> hours at day.</label
+							>
+						</div>
 					</div>
 					<div class="games-distract">
 						<label for="distract">While you play, what else do you do?</label>
@@ -155,11 +175,14 @@
 							<option value="noone">Player focused</option>
 						</select>
 					</div>
-					<fieldset>
+					<fieldset class="game-data">
 						<legend>What are your favorite games titles?</legend>
-						<div>
+						<div class="whatgames">
+							<div class="gamesItems">
 							<input type="checkbox" name="favGames" value="lol" id="lol" />
 							<label for="lol">Legue of Legends</label>
+						</div>
+						<div class="gamesItems">
 							<input
 								type="checkbox"
 								name="favGames"
@@ -167,25 +190,34 @@
 								id="valorant"
 							/>
 							<label for="valorant">Valorant</label>
+						</div>
+						<div class="gamesItems">
 							<input type="checkbox" name="favGames" value="lor" id="lor" />
 							<label for="lor">Legue of Runeterra</label>
+						</div>
+						<div class="gamesItems">
 							<input type="checkbox" name="favGames" value="teta" id="teta" />
 							<label for="teta">Teamfight Tactics</label>
 						</div>
+						
 					</fieldset>
 				</section>
 				<section class="recommended-games">
 					<div>
-						<label for="satisfaction"
-							>How satisfied are you with RIOT Games?</label
-						>
+						<h4>How satisfied are you with RIOT Games?</h4>
+						<div class="satsgame">
 						<input
 							type="range"
 							name="satisfaction"
 							min="1"
 							max="10"
 							value="1"
+							class="satItem"
 						/>
+						<label for="hour" class="satItem"
+								><span class="numSats"> </span> of granted.</label
+							>
+						</div>	
 						<p>10 = I am happy, 1 = completely unsatisfied</p>
 					</div>
 					<fieldset class="recomendUs">
@@ -221,7 +253,9 @@
 						<textarea name="comments" id="text-area" cols="100" rows="10">
 feel free to comments...</textarea
 						>
+						<p>Max character <span>140</span></p>
 					</div>
+					
 					<button type="submit" id="submit">Submit</button>
 				</section>
 			</form>
