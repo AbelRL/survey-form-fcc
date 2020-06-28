@@ -51,7 +51,8 @@
 						/>
 					</div>
 					<div class="user-data uage">
-						<label for="age" id="number-label">How old?</label>
+						<div class="ageItem">
+						<label class="itema" for="age" id="number-label">How old?</label>
 						<input
 							type="number"
 							inputmode="numeric"
@@ -60,16 +61,19 @@
 							min="18"
 							max="50"
 							placeholder="18"
+							class="itema"
 						/>
-
-						<label for="dropdown" id="roles-label">Role</label>
-						<select name="roles" id="dropdown">
+					</div>
+					<div class="ageItem">
+						<label class="itema" for="dropdown" id="roles-label">Roles</label>
+						<select name="roles" id="dropdown" class="itema" >
 							<option selected disabled>Kind of players</option>
 							<option value="relaxed">Relaxed Noob</option>
 							<option value="casual">Casual Gamer</option>
 							<option value="hardcore">Hardcore gamer</option>
 							<option value="professional">Professional gamer</option>
 						</select>
+					</div>
 					</div>
 					<fieldset class="user-data ugender">
 						<label class="lblGender">Gender:</label>
