@@ -25,7 +25,7 @@
 					habits.
 				</p>
 			</header>
-			<form id="survey-form">
+			<form id="survey-form" novalidate>
 				<!-- data user: name, mail, age, current role-->
 				<section class="user-data">
 					<label for="name" id="name-label">Name</label>
@@ -62,6 +62,7 @@
 							max="50"
 							placeholder="18"
 							class="itema"
+							required
 						/>
 					</div>
 					<div class="ageItem">
@@ -259,9 +260,7 @@
 					</fieldset>
 					<div class="user-comments">
 						<label for="comments">Any comments or suggestion?</label>
-						<textarea name="comments" id="text-area" cols="100" rows="10">
-feel free to comments...</textarea
-						>
+						<textarea name="comments" id="text-area" cols="100" rows="10"></textarea>
 						<p>Max character <span>140</span></p>
 					</div>
 					
